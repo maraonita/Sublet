@@ -1,0 +1,116 @@
+<%= simple_form_for @post do |f| %>
+<ul class="list-group">
+  <li class="list-group-item">
+  	<%= label :neighborhood_id, "Neighborhood "%>
+  	 <%= f.collection_select :neighborhood_id, Neighborhood.order(:name), :id, :name, include_blank: false%>
+  </li>
+  <li class="list-group-item">
+  	<div class="row">
+  		<div class="col-md-3">
+  			<div class="form-inline">
+				<%= f.input :price, label: 'Price per month $' %>
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<div class="form-inline">
+				<%= f.input :start_lease, label: 'Start date' %>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-inline">
+				<%= f.input :end_lease, label: 'End date' %>
+			</div>
+		</div>
+	</div>
+  </li>
+  <li class="list-group-item">
+  	<div class="row">
+  		<div class="col-md-4">
+		  	<%= label :housing_type_id, "Housing Type "%>
+		  	<%= f.collection_select :housing_type_id, HousingType.order(:size_order), :id, :name, include_blank: false %>
+		</div>
+		<div class="col-md-4">
+			<%= label :bed_size_id, "Bed Size "%>
+  			<%= f.collection_select :bed_size_id, BedSize.order(:size_order), :id, :name, include_blank: false %>
+		</div>
+		<div class="col-md-4">
+			<%= label :room_type_id, "RoomType "%>
+   			<%= f.collection_select :room_type_id, RoomType.order(:size_order), :id, :name, include_blank: false %>
+		</div>
+	</div>
+  </li>
+  <li class="list-group-item">
+  	<div class="row form-inline">
+  		<div class="col-md-4">
+  			<%= f.input :num_roommates, label: 'Baths' %>
+  		</div>
+  		<div class="col-md-4">
+  			<%= f.input :num_roommates, label: 'Roommates' %>
+  		</div>
+  		<div class="col-md-4">
+  			<%= f.input :num_roommates, label: 'Flatmates' %>
+  		</div>
+  	</div>
+  </li>
+</ul>
+
+<div class="form-group">
+	<%= f.label :image %>
+	<%= f.file_field :image, required: true %>
+</div>
+
+<!-- Check Box Columns -->
+<div class="row">
+  <div class="col-xs-6 col-md-4" id="essentials">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			  <h3 class="panel-title">Essentials</h3>
+			</div>
+			<div class="panel-body">
+				<%= f.input :heating, as: :boolean, :input_html => { :checked => ("checked" if @post.heating) } %>
+				<%= f.input :electricity, as: :boolean, :input_html => { :checked => ("checked" if @post.elevator) } %>
+				<%= f.input :hot_water, as: :boolean, :input_html => { :checked => ("checked" if @post.hot_water) } %>
+			</div>
+		</div>
+	</div>
+
+  <div class="col-xs-6 col-md-4" id="amenities">
+  	<div class="panel panel-default">
+  		<div class="panel-heading">
+			  <h3 class="panel-title">Amenities</h3>
+			</div>
+			<div class="panel-body">
+				<%= f.input :elevator, as: :boolean, :input_html => { :checked => ("checked" if @post.elevator) } %>
+				<%= f.input :air_conditioning, as: :boolean, :input_html => { :checked => ("checked" if @post.air_conditioning) } %>
+				<%= f.input :washer, as: :boolean, :input_html => { :checked => ("checked" if @post.washer) } %>
+				<%= f.input :dryer, as: :boolean, :input_html => { :checked => ("checked" if @post.dryer) } %>
+				<%= f.input :balcony, as: :boolean, :input_html => { :checked => ("checked" if @post.balcony) } %>
+				<%= f.input :doorman, as: :boolean, :input_html => { :checked => ("checked" if @post.doorman) } %>
+				<%= f.input :buzzer, as: :boolean, :input_html => { :checked => ("checked" if @post.buzzer) } %>
+				<%= f.input :intercom, as: :boolean, :input_html => { :checked => ("checked" if @post.intercom) } %>
+				<%= f.input :cable, as: :boolean, :input_html => { :checked => ("checked" if @post.cable) } %>
+				<%= f.input :internet, as: :boolean, :input_html => { :checked => ("checked" if @post.internet) } %>
+				<%= f.input :furnished, as: :boolean, :input_html => { :checked => ("checked" if @post.furnished) } %>
+				<%= f.input :unfurnished, as: :boolean, :input_html => { :checked => ("checked" if @post.unfurnished) } %>
+			</div>
+		</div>
+  </div>
+
+  <div class="col-xs-6 col-md-4" id="others">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			  <h3 class="panel-title">Others</h3>
+			</div>
+			<div class="panel-body">
+				<%= f.input :smoking, as: :boolean, :input_html => { :checked => ("checked" if @post.smoking) } %>
+				<%= f.input :pool, as: :boolean, :input_html => { :checked => ("checked" if @post.pool) } %>
+				<%= f.input :gym, as: :boolean, :input_html => { :checked => ("checked" if @post.gym) } %>
+			</div>
+		</div>
+	</div>
+<!-- End of Check Box Columns -->
+	<div class="form-group">
+		<%= f.text_field :description, placeholder: 'Description!', class: 'form-control', label: false, input_html: {maxlength: 250, size: 100}  %>
+	</div>
+	<%= f.submit :class => 'btn btn-primary'%>
+<% end %>

@@ -1,0 +1,1 @@
+<%= link_to('Delete', post_path(post), method: :delete, data: {confirm: 'Delete post?'}, :class =>"btn btn-default btn-danger") if current_user.present? && post.user_id == current_user.id %>

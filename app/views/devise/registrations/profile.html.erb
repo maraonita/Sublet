@@ -1,0 +1,26 @@
+<div class="row profile-header">
+	<div class="col-xs-3 profile-user-img">
+		<%= construct_user_image_tag(@user) %>
+	</div>
+	<div class="col-xs-9 text-center">
+		<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+	</div>
+</div>
+
+<div id="my_posts">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">Listings</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !@user.posts.empty? %>
+				<h2>Current postings</h2>
+				<% @user.posts.each do |p| %>
+					<%= render 'posts/card', post: p %>
+				<% end %>
+			<% else %>
+				<h2><%= @user.first_name %> has no posts to show </h2>
+			<% end %>
+		</div>
+	</div>
+</div>

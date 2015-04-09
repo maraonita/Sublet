@@ -1,0 +1,77 @@
+<!--  <%= construct_user_image_tag(post.user) %> -->
+
+<div class='post_card'>
+    <div class="row detail-header-row">
+        <div class="detail-header-image col-md-12">
+            <% if post.image %>
+                <span class="price-info"><h2><%= number_to_currency(post.price) %> / month</h2></span>
+                <%= construct_linked_post_image_tag(post) %>
+            <% end %>
+        </div>
+        <% if post.user %>
+            <span class="detail-profile-picture">
+                <div><div class="profile-image-container"><%= construct_user_image_tag(post.user) %></div></div>
+            </span> 
+        <% end %>
+    </div>
+    <div class='basic_info'>
+        <div class="text-center">
+            <h1><%= post.housing_type_name %> in <%= post.neighborhood_name %></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="detail-about col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">About This Sublet</h3>
+                </div>
+                <div class="panel-body give-row-room">
+                    <div class="row"><em><%= post.description %></em></div>
+                    <div class="row"><strong>Bed</strong><br /><%= post.bed_size_name %></div>
+                    <div class="row"><strong>Room Type</strong><br /><%= post.room_type_name %></div>
+                    <div class="row"><%= link_to "View lister's profile", user_profile_path(post.user_id), :class=>'btn btn-primary' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-available col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Availability</h3>
+                </div>
+                <div class="panel-body give-row-room">
+                    <div class="row">
+                        <strong>From:</strong><br /> <%= post.start_lease%>
+                    </div>
+                    <div class="row">
+                        <strong>To:</strong><br /> <%= post.end_lease %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-info col-xs-12 col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                    <h3 class="panel-title">Essentials / Amenities / Other</h3>
+              </div>
+              <div class="panel-body give-row-room">
+                <% checks = post.checked_items %>
+                <% if !checks.empty? %>
+                    <ul>
+                        <% checks.each do |true_param_symbol| %>
+                            <li><%= true_param_symbol.to_s.split('_').join(' ').capitalize %></li>
+                        <% end %>
+                    </ul>
+                <% end %>
+              </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="text-center detail-action-buttons">
+        <%= render 'posts/delete_link', post: post %>
+        <%= render 'posts/edit_link', post: post %>
+        <%= render 'posts/make_request', post: post %>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<% if !current_user.present? || (post.user_id != current_user.id) %>
+	<% if current_user.present? %>
+		<% r = 	Request.open_for_this_post_and_user(post.id, current_user.id) %>
+		<% if r %>
+			<%= link_to "Cancel request", decline_request_path(r.id), method: :post, :class =>"btn btn-default btn-danger" %>
+		<% else %>
+			<%= link_to "Request!", new_request_path(post_id: post.id), method: :post, :class =>"btn btn-default btn-success" %>
+		<% end %>
+	<% else %>
+		<%= link_to "Request!", new_request_path(post_id: post.id), method: :post, :class =>"btn btn-default btn-success" %>
+	<% end %>
+<% end %>

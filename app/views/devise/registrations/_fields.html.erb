@@ -1,0 +1,30 @@
+<%= f.input :email, required: true, autofocus: true %>
+<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+<%= f.input :password_confirmation, required: true %>
+<div class="row">
+	<div class="col-xs-12 col-md-12" id="essentials">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			  <h3 class="panel-title">User Information</h3>
+			</div>
+			<div class="panel-body row text-center" id="row-of-user-info">
+				<div class="col-md-3">
+					<%= f.label 'First name', required: true%>
+					<%= f.text_field :first_name, required: true %>
+				</div>
+				<div class="col-md-3">
+					<%= f.label 'Last name', required: true%>
+					<%= f.text_field :last_name, required: true %>
+				</div>
+				<div class="col-md-3">
+					<%= f.label 'University', required: true%>
+					<%= f.collection_select :university_id, University.order(:name), :id, :name, include_blank: false %>
+				</div>
+				<div class="col-md-3">
+					<%= f.label 'Gender', required: true%>
+					<%= f.select :gender, ['Male', 'Female'], include_blank: false, required: true %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

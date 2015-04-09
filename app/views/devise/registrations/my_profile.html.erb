@@ -1,0 +1,99 @@
+<div class="row profile-header">
+	<div class="col-xs-3 profile-user-img">
+		<%= construct_user_image_tag(current_user) %>
+	</div>
+	<div class="col-xs-9 text-center">
+		<h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+	</div>
+</div>
+<div class="text-left detail-action-buttons">
+    <div class="btn-group btn-group-lg" role="group">
+		<%= link_to 'Edit Profile', edit_user_registration_path, :class =>"btn btn-default btn-primary" %>
+	</div>
+</div>
+
+<div id="my_requests">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">Open Requests</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !@requested_posts.empty? %>
+				<% @requested_posts.each do |p| %>
+					<%= render 'posts/card', post: p %>
+				<% end %>
+			<% else %>
+				<h2>You have no open requests!</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div id="incoming_requests">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">Inquiries</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !@to_confirm.empty? %>
+				<% @to_confirm.each do |r| %>
+					<%= render 'requests/card', request: r %>
+				<% end %>
+			<% else %>
+				<h2>You have no inquiries!</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div id="incoming_requests">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">Confirmed inquiries</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !@confirmed_for_seller.empty? %>
+				<% @confirmed_for_seller.each do |r| %>
+					<%= render 'requests/card', request: r %>
+				<% end %>
+			<% else %>
+				<h2>You haven't confirmed any inquries!</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<div id="incoming_requests">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">Accepted requests</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !@confirmed_for_buyer.empty? %>
+				<% @confirmed_for_buyer.each do |r| %>
+					<%= render 'requests/card', request: r %>
+				<% end %>
+			<% else %>
+				<h2>No requests have been accepted!</h2>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+<div id="my_posts">
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+			<h3 class="panel-title">My Listings</h3>
+		</div>
+		<div class="panel-body listings-panel">
+			<% if !current_user.posts.empty? %>
+				<% current_user.posts.each do |p| %>
+					<%= render 'posts/card', post: p %>
+				<% end %>
+			<% else %>
+				<h2>You have no posts!</h2>
+			<% end %>
+		</div>
+	</div>
+</div>

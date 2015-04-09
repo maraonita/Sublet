@@ -1,0 +1,48 @@
+<div class="request">
+	<div class="panel panel-default give-row-room">
+		<div class="row">
+			<div class="col-md-5">
+				<% u = User.find(request.buyer_user_id) %>
+				<%= link_to u.first_name, user_profile_path(u) %> has made a request!
+				<%= link_to 'View post', post_path(request.post_id), :class => 'btn btn-warning move-right' %>
+			</div>
+			<div class="col-md-7 inquiry-buttons">
+				<% if request.belongs_to_user?(current_user) %>
+					<% if request.confirmed? %>
+						<div class="delete-request">
+							<%= link_to "Decline", decline_request_path(request), method: :post, :class => 'btn btn-danger' %>
+						</div>
+						<div class="accept-request-email">
+							<%= link_to "Remove confirmation", unconfirm_request_path(request.id), method: :post, :class => 'btn btn-success' %>
+						</div>
+						<div class="email">
+							<button type="button" class="btn btn-primary contact-button">
+								<a href="mailto:<%= User.find(request.buyer_user_id).email %>">Contact</a>
+							</button>
+						</div>
+					<% else %>
+						<div class="delete-request">
+							<%= link_to "Decline", decline_request_path(request), method: :post, :class => 'btn btn-danger' %>
+						</div>
+						<div class="accept-request-payment">
+							<%= link_to "Charge", payment_path, :class => 'btn btn-success' %>
+							<div class="button-description text-center">
+								<em class="small-font">
+									Request the payment through<br />our secure transaction site<br />for a small fee
+								</em>
+							</div>
+						</div>
+						<div class="accept-request-email">
+							<%= link_to "Confirm", accept_request_and_contact_path(request.id), method: :post, :class => 'btn btn-primary' %>
+							<div class="button-description text-center">
+								<em class="small-font">
+									Accept and contact<br />the interested party<br />about next steps
+								</em>
+							</div>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<% if ! (@start_lease && @end_lease && @neighborhood_name) %>
+	<h1>All posts</h1>
+<% else %>
+	<h1>Results in <%= @neighborhood_name %> from <%= @start_lease.to_s(:default) %> to <%= @end_lease.to_s(:default) %></h1>
+<% end %>
+
+<%= render 'search_form' %>
+
+<% if @no_search_results %>
+	<h2>No results!</h2>
+	<hr/>
+	<h2>Displaying all posts</h2>
+<% end %>
+
+<% @posts.each do |p| %>
+	<%= render 'card', post: p %>
+<% end %>
+
+<%= will_paginate @posts  %>

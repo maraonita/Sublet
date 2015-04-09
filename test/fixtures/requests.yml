@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seller_user_id: 
+  buyer_user_id: 
+  post_id: 1
+
+two:
+  seller_user_id: 
+  buyer_user_id: 
+  post_id: 1

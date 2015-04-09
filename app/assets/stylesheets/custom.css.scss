@@ -1,0 +1,461 @@
+
+/* ------------------------------------*/
+    /* HOMEPAGE & NAVBAR CSS BELOW */
+/* ------------------------------------*/
+
+#homeJumbo h1 { 
+	text-align: center;
+	margin: 50px;
+  color: #fff;
+  text-shadow: 2px 2px #d3d3d3;
+  letter-spacing: 1.5px;
+}
+body{
+	background-color: #7FD6D3;
+}
+.jumbotron {
+	background: linear-gradient(
+		rgba(255, 255, 255, 0.3),
+		rgba(255, 255, 255, 0.3)
+	), url('boston-skyline.jpg') no-repeat center center fixed;
+	background-size: 100% auto;
+}
+label {
+	margin-right: 6px;
+	margin-left: 6px;
+}
+.post_card:hover {
+  cursor: pointer;
+}
+.container{
+	margin-bottom: 6px;
+}
+
+.list-group .form-control {
+	width: 33%;
+}
+
+.room-image{
+	height: 100%;
+	width: 100%;
+}
+
+img.user-img {
+  // max-height: 100px;
+  // width: 100%;
+  height: 100%;
+  width: auto;
+  margin: auto auto;
+  display: block;
+}
+
+.navbar {
+  .container-fluid {
+    background-color: #6CCFCA;
+    border: none;
+    
+    .navbar-brand {
+      color: #fff;
+      font-size: 175%;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .nav > li > a {
+      color: #fff;
+      font-size: 110%;
+    }
+  }
+}
+
+.search_form {
+  padding-top: 40px;
+  text-align: center;
+
+  .form-start-lease {
+    display: inline;
+  }
+
+  .form-end-lease {
+    display: inline;
+    padding-left: 50px;
+  }
+
+  .form-search-btn {
+    display: inline;
+    padding-left: 30px;
+  }
+}
+
+.big-search-button-row {
+  margin-top: 20px;
+}
+
+.big-search-button-row > input {
+  width: 200px;
+}
+
+.browse-all {
+  padding-top: 25px;
+}
+
+.faux-date-grouping {
+  display: inline-block;
+}
+
+.faux-form-control .faux-date-grouping select {
+  display: inline-block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.faux-form-control .faux-date-grouping select:first-child {
+  border-radius: 4px 0 0 4px;
+  -moz-border-radius:4px 0 0  4px;
+  -webkit-border-top-left-radius:4px; 
+  -webkit-border-top-right-radius:0; 
+  -webkit-border-bottom-left-radius:4px; 
+  -webkit-border-bottom-right-radius:0; 
+  -webkit-appearance: none;
+  margin-right: -4px;
+}
+
+.faux-form-control .faux-date-grouping select:last-child {
+  border-radius:0 4px 4px 0;
+  -moz-border-radius:0 4px 4px 0;
+  -webkit-border-top-left-radius:0; 
+  -webkit-border-top-right-radius:4px; 
+  -webkit-border-bottom-left-radius:0; 
+  -webkit-border-bottom-right-radius:4px; 
+  -webkit-appearance: none;
+  margin-left: -4px;
+}
+
+.faux-form-control .faux-date-grouping select:nth-child(2){
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-top-left-radius:0; 
+  -webkit-border-top-right-radius:0; 
+  -webkit-border-bottom-left-radius:0; 
+  -webkit-border-bottom-right-radius:0; 
+  -webkit-appearance: none;
+}
+
+option, select {
+  margin: 0; padding: 0;
+}
+
+/* ------------------------------------*/
+        /* LISTING CSS BELOW */
+/* ------------------------------------*/
+
+.neighbor-search-group {
+  margin-bottom: 10px;
+  width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+}
+
+.card, .dialog {
+  position: relative;
+  display: inline-block;
+  width: 95%;
+  height: 150px;
+  vertical-align: top;
+  background-color: #ffffff;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  margin: 25px 5% 25px 5%;
+
+}
+
+.card:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.1); 
+}
+
+.dialog {
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.dialog > .content {
+  height: 170px;
+  font-size: 0.9em;
+}
+
+.dialog > .content > .title {
+  font-size: 1.3em;
+}
+
+.dialog > .button {
+  width: 90px;
+  float: right;
+}
+.row {
+	overflow: hidden;
+  padding: 0 !important;
+
+}
+.subletPic {
+  position: relative;
+  left: -12px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.post-img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 0 !important;
+
+}
+.subletPrice{
+	height: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
+	text-align: center;
+  display: block;
+}
+.subletPrice h1{
+	margin-top: 12%;
+  color: #6CCFCA;
+
+}
+.subletNeighborhood h3{
+	margin-top: 45%;
+}
+
+/* ------------------------------------*/
+
+/* ------------------------------------*/
+        /* FORM CSS BELOW */
+/* ------------------------------------*/
+@media (min-width: 768px) {
+  .post_price input {
+    width: 50% !important;
+  } 
+}
+
+
+/* ------------------------------------*/
+
+/* ------------------------------------*/
+        /* DETAIL CARD CSS BELOW */
+/* ------------------------------------*/
+.detail-header-row {
+  height: 350px;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+  position: relative;
+  overflow: visible;
+}
+.detail-header-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.detail-header-image img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.price-info {
+  position: absolute;
+  z-index: 3;
+  right: 0px;
+  text-align: center;
+  border-radius: 0 0 0 10px;
+  width: 25%;
+  height: 100px;
+  overflow: hidden;
+  background-color: rgba(127, 214, 211, 1.0);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.detail-info .row, .detail-available .row, .detail-about .row {
+  padding: 10px 10px;
+}
+
+.detail-info li, .detail-info ul{
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.detail-action-buttons {
+  margin: 18px auto;
+}
+
+$prof-pic-size: 200px;
+
+.detail-profile-picture {
+  position: absolute;
+  z-index: 4;
+  left: 90px;
+  bottom: -1*$prof-pic-size/3;
+}
+
+.detail-profile-picture > div {
+  width: $prof-pic-size;
+  height: $prof-pic-size;
+  border-radius: $prof-pic-size/2;
+  background-color: black;
+  overflow: hidden;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+.detail-profile-picture div .profile-image-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.profile-image-container img {
+  margin-left: 50%;
+  margin-top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+}
+
+
+/* ------------------------------------*/
+
+/* ------------------------------------*/
+        /* MY_PROFILE CSS BELOW */
+/* ------------------------------------*/
+
+.listings-panel .post_card {
+  width: 90%;
+  margin: 10px 5%;
+}
+
+.profile-header {
+  border-radius: 4px;
+  width:60%;
+  margin-left: 20% !important;
+  margin-right: 20% !important;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 18px;
+  overflow: none;
+  background-color: rgba(127, 214, 211, 0.2);
+}
+
+.profile-header .col-xs-3 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.profile-header div:nth-child(2) h1 {
+  font-size: 42px !important;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+.profile-user-img {
+  overflow: hidden;
+  height: 150px;
+}
+
+.profile-user-img img {
+  width:  auto;
+  height: 150px;
+  float: left;
+}
+
+// .inquiry-buttons 
+
+.inquiry-buttons div {
+  display: inline-block;
+  float: right;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.contact-button a:hover, .contact-button a:visited, .contact-button a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------------------------------*/
+
+/* ------------------------------------*/
+    /* SIGN IN / SIGN UP CSS BELOW */
+/* ------------------------------------*/
+
+.link-action-buttons a {
+  display: inline-block;
+}
+
+#row-of-user-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------*/
+
+/* ------------------------------------*/
+      /* HELPER GENERIC CSS BELOW */
+/* ------------------------------------*/
+
+.panel {
+  overflow: hidden;
+}
+
+.big-search-bar {
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  -webkit-appearance: none;
+}
+
+.move-left {
+  margin-right: 10px;
+}
+
+.move-right {
+  margin-left: 10px;
+}
+
+.give-row-room .row {
+  margin-left: 10px;
+  padding: 10px !important;
+}
+
+.btn-primary {
+  background-color: #6CCFCA !important;
+  border-color: #5dcbc5 !important;
+}
+
+.inline-form-button {
+  float: left;
+  clear: both;
+  margin-right: 4px;
+  display: inline-block;
+}
+
+.button-description {
+  line-height: 70%;
+}
+
+.small-font {
+  font-size: 10px;
+}
+
+/* ------------------------------------*/
