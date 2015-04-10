@@ -4,4 +4,7 @@ class StaticController < ApplicationController
 
   def payment
   end
+
+  def about
+  end
 end

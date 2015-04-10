@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/my_profile', to: 'user#my_profile', as: 'my_profile'
   get '/users/:id/profile', to: 'user#profile', as: 'user_profile'
 
+  get '/about', to: 'static#about'
   devise_for :users
 
   get '/posts/search(/:start_lease/:end_lease)', to: 'posts#search', as: 'post_search'
