@@ -8,7 +8,7 @@
 	  		<div class="col-md-6 col-md-offset-3 text-center faux-form-control">
 				<strong>Available from</strong><br />
 				<div class="faux-date-grouping move-left">
-					<%= select_date Date.today, :prefix => :start_lease%> 
+					<%= select_date Date.today, start_year: Date.today.year, :prefix => :start_lease%> 
 				</div>
 				<strong>to</strong> 
 				<div class="faux-date-grouping move-right">
