@@ -110,7 +110,7 @@
 	</div>
 <!-- End of Check Box Columns -->
 	<div class="form-group">
-		<%= f.text_field :description, placeholder: 'Description!', class: 'form-control', label: false, input_html: {maxlength: 250, size: 100}  %>
+		<%= f.text_field :description, placeholder: 'Description!', class: 'form-control', id: 'description', label: false, input_html: {maxlength: 250, size: 100}  %>
 	</div>
 	<%= f.submit :class => 'btn btn-primary'%>
 <% end %>

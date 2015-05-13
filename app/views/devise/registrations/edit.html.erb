@@ -32,18 +32,10 @@
         </div>
       </div>
       <div class="col-md-4">
-        <div class="panel panel-danger">
-          <div class="panel-heading">
-            <h3 class="panel-title">Cancel Account</h3>
-          </div>
-          <div class="panel-body">
-            <p>
-              <strong>Unhappy?</strong> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-            </p>
-          </div>
-        </div>
+        <p>
+          <strong>Unhappy?</strong> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        </p>
       </div>
-    </div>
   </div>
 
   <div class="text-center detail-action-buttons">
