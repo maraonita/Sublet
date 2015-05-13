@@ -16,5 +16,9 @@ Rails.application.routes.draw do
   get '/payment', to: 'static#payment', as: 'payment'
   post 'request/:id/accept_and_contact', to: 'requests#accept_and_contact' , as: 'accept_request_and_contact'
 
+  get '/about', to: 'static#about'
+  get '/faq', to: 'static#faq'
+  get '/contact', to: 'static#contact'
+
   root 'static#home'
 end
