@@ -15,7 +15,7 @@
     <%= f.input :current_password, hint: "We need your current password to confirm your changes.", required: true %>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-10">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title">User Information</h3>
@@ -25,13 +25,13 @@
             <%= f.text_field :first_name, required: false %>
             <%= f.label 'Last name', required: false%>
             <%= f.text_field :last_name, required: false %>
-            
+						<div>
             <%= f.label 'University', required: false%>
-            <%= f.collection_select :university_id, University.order(:name), :id, :name, default: false, default: current_user.university_name %>
+        	  <%= f.collection_select :university_id, University.order(:name), :id, :name, default: false, default: current_user.university_name  %>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
         <p>
           <strong>Unhappy?</strong> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
         </p>
