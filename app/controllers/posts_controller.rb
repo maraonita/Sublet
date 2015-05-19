@@ -31,10 +31,19 @@ class PostsController < ApplicationController
   def create
     authenticate_user!
     @post = current_user.posts.build(post_params)
-    @post.save ? (redirect_to @post) : (render 'new')
+		if @post.save
+			params[:images].try(:each) do |image| 
+#				photo = Photo.create(image: image)
+				@post.photos << Photo.create(image: image)
+			end
+			redirect_to @post
+		else
+			render 'new'
+		end
   end
 
   def show
+		@post = Post.find(params[:id])
   end
 
   def edit
@@ -66,6 +75,6 @@ private
     #                               :housing_type_id,
     #                               :room_type_id,
     #                               :bed_size_id,
-    #                               :heating)
+    #                               :heating )
   end
 end

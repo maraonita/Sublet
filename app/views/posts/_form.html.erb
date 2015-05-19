@@ -55,8 +55,8 @@
 </ul>
 
 <div class="form-group">
-	<%= f.label :image %>
-	<%= f.file_field :image, required: true %>
+		<%= f.label '*add up to 5 photos' %>
+		<%= f.file_field :photos, name: 'images[]', multiple: true, required: true %>
 </div>
 
 <!-- Check Box Columns -->

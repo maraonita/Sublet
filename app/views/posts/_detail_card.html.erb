@@ -1,12 +1,9 @@
 <!--  <%= construct_user_image_tag(post.user) %> -->
-
 <div class='post_card'>
     <div class="row detail-header-row">
         <div class="detail-header-image col-md-12">
-            <% if post.image %>
                 <span class="price-info"><h2><%= number_to_currency(post.price) %> / month</h2></span>
-                <%= construct_linked_post_image_tag(post) %>
-            <% end %>
+                <%= construct_linked_post_image_tag(@post.photos[0]) %>
         </div>
         <% if post.user %>
             <span class="detail-profile-picture">
@@ -68,10 +65,36 @@
             </div>
         </div>
     </div>
+<div class="row">
+        <div class="detail-images col-xs-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Pictures</h3>
+                </div>
+                <div class="panel-body give-row-room">
+									<div class="row carousel">
+										<div class="owl-carousel">
+											<% @post.photos.each do |photo| %>
+												<div>
+													<%= image_tag(photo.image.url) %>
+												</div>
+												<div>
+												</div>
+											<% end %>
+										</div>
+									</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+			</div>
    
     <div class="text-center detail-action-buttons">
         <%= render 'posts/delete_link', post: post %>
         <%= render 'posts/edit_link', post: post %>
         <%= render 'posts/make_request', post: post %>
     </div>
+		<script>
+			$(".owl-carousel").owlCarousel(); //initializes carousel
+		</script>
 </div>

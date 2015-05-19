@@ -1,8 +1,8 @@
 <div class="row post_card card" id="<%= post.id %>">
 	<div class="col-md-5 subletPic hidden-sm hidden-xs">
-		<% if post.image %>
-			<%= construct_post_image_tag(post) %>
-		<% end %>
+		<%# if post.image %>
+			#<%= construct_post_image_tag(post) %>
+		<%# end %>
 	</div>
 	<div class="col-md-5 subletPrice">
 		<h1><%= number_to_currency(post.price) %>/month </h1>

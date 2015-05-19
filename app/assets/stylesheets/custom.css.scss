@@ -154,6 +154,11 @@ option, select {
   margin: 0; padding: 0;
 }
 
+.item > img {
+	height: 200px;
+	width: 100%;
+}
+
 /* ------------------------------------*/
         /* LISTING CSS BELOW */
 /* ------------------------------------*/
@@ -237,6 +242,20 @@ option, select {
 	margin-top: 45%;
 }
 
+.row.carousel {
+	margin: 0;
+}
+.owl-carousel div {
+	margin: 3px;
+}
+
+.owl-carousel div img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
 /* ------------------------------------*/
 
 /* ------------------------------------*/
@@ -289,7 +308,7 @@ option, select {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-.detail-info .row, .detail-available .row, .detail-about .row {
+.detail-info .row, .detail-available .row, .detail-about .row .detail-images .row {
   padding: 10px 10px;
 }
 

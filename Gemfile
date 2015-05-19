@@ -7,6 +7,7 @@ gem "font-awesome-rails"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'will_paginate', '~> 3.0.6'
+gem 'owlcarousel-rails'
 
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
