@@ -15,6 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Post Your Sublet!', new_post_path(@post) %></li>
+        <li><%= link_to 'About Us', about_path%></li>
+        <li><%= link_to 'Faq', faq_path%></li>
+        <li><%= link_to 'Contact Us', contact_path%></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<% if current_user.present? %>
@@ -34,7 +37,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
 <script>
 $('nav#main li.hoverable').hover(
   function() {
