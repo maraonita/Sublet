@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/posts/search(/:start_lease/:end_lease)', to: 'posts#search', as: 'post_search'
   
   resources :posts
+	resources :charges
 
   post '/request/:post_id', to: 'requests#create', as: 'new_request'
   # delete '/request/:id', to: 'requests#destroy', as: 'delete_request'

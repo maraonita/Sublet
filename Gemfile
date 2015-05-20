@@ -8,6 +8,8 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'will_paginate', '~> 3.0.6'
 gem 'owlcarousel-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem "figaro"
 
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'

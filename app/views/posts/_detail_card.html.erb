@@ -1,4 +1,5 @@
 <!--  <%= construct_user_image_tag(post.user) %> -->
+<p><%= flash[:error] %></p>
 <div class='post_card'>
     <div class="row detail-header-row">
         <div class="detail-header-image col-md-12">
@@ -45,6 +46,9 @@
                     <div class="row">
                         <strong>To:</strong><br /> <%= post.end_lease %>
                     </div>
+										<div class="row payment-form">
+											<%= render "payment_form" %>	
+										</div>
                 </div>
             </div>
         </div>
