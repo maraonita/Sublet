@@ -13,12 +13,12 @@
 		</div>
 		<div class="col-md-4 col-md-offset-1">
 			<div class="form-inline">
-				<%= f.input :start_lease, label: 'Start date' %>
+				<%= f.input :start_lease, start_year: Date.today.year, label: 'Start date' %>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-inline">
-				<%= f.input :end_lease, label: 'End date' %>
+				<%= f.input :end_lease, start_year: Date.today.year, label: 'End date' %>
 			</div>
 		</div>
 	</div>
