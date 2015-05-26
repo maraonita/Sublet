@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable, #:confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   validates :university_id, :first_name, :last_name, :gender, presence: true
@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
 
   validates_property :format, of: :image, in: [:jpeg, :jpg, :png, :bmp], case_sensitive: false,
                      message: "should be either .jpeg, .jpg, .png, .bmp", if: :image_changed?
+
+	def save_customer_id(customer_id)
+		self.update_attributes(customer_id: customer_id )
+	end
 
   def university_name
     University.find(university_id).name
