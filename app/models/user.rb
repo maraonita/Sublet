@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, #:confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
+	has_many :payments
   validates :university_id, :first_name, :last_name, :gender, presence: true
   validate :edu_email
   has_one :university

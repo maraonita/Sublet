@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   
   resources :posts
 	resources :charges
+	resources :payments
 
   post '/request/:post_id', to: 'requests#create', as: 'new_request'
   # delete '/request/:id', to: 'requests#destroy', as: 'delete_request'
   post '/request/:id/unconfirm', to: 'requests#remove_confirmation', as: 'unconfirm_request'
   post '/request/:id/decline', to: 'requests#decline', as: 'decline_request'
-  get '/payment', to: 'static#payment', as: 'payment'
   post 'request/:id/accept_and_contact', to: 'requests#accept_and_contact' , as: 'accept_request_and_contact'
 
   get '/about', to: 'static#about'

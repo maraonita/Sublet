@@ -1,0 +1,22 @@
+<%= flash[:success] %>
+<%= flash[:error] %>
+
+<% @users.each do |user| %>
+	<table class="table table-bordered">
+		<caption><b><%= user.email %></b></caption>
+		<thead>
+			<tr>
+			 <th>Amount</th>
+			 <th>Date Due</th>
+			 <th>Charge</th>
+			</tr>
+		</thead>
+		<% user.payments.each do |payment| %>
+		<tr>
+			<td>$<%= payment.amount %></td>
+			<td><%= payment.due%></td>
+			<td><%= button_to "charge", charges_path(amount: payment.amount, customer_id: user.customer_id, date: payment.due, payment_id: payment.id) %></td>
+		</tr>
+		<% end %>
+	</table>
+<% end %>

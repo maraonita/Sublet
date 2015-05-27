@@ -1,15 +1,18 @@
-<%= form_tag charges_path	do %>
+<%= form_tag payments_path	do %>
 	<article>
 		<span>Amount: $5.00</span>
 	</article>
 	<%= hidden_field_tag 'post_id', params[:id] %>
+	<%= hidden_field_tag 'amount', @post.price.to_i %>
+	<%= hidden_field_tag 'start_lease', @post.start_lease %>
+	<%= hidden_field_tag 'end_lease', @post.end_lease %>
 	<script
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		data-key="pk_test_BxRKDgXVNnsSOuXqHORPlgiu"
 		data-image="/img/documentation/checkout/marketplace.png"
 		data-name="Demo Site"
 		data-description="2 widgets"
-		data-amount="2000"
+		data-amount= <%= @post.price.to_i * 100%>
 		data-name="Sublit">
 	</script>	
 <% end %>
