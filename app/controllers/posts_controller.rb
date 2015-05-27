@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :find_post, only:[:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.paginate(:page => params[:page], :per_page => 10)
+    @posts = Post.where(booked: false).paginate(:page => params[:page], :per_page => 10)
   end
 
   def search # has a start_lease, end_lease

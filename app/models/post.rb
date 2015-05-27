@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
   validates :price, :start_lease, :end_lease, :neighborhood_id, presence: true
   default_scope { order('price ASC') }
 
+	def book!
+		self.update_attributes(booked: true)
+	end
+
   def neighborhood_name
     Neighborhood.find(neighborhood_id).name
   end
