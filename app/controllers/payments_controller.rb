@@ -8,18 +8,12 @@ class PaymentsController < ApplicationController
 
 	def create
 		date = params[:start_lease].to_date
-		begin 
-			while(date <= params[:end_lease].to_date)
-				payment = Payment.create(due: date, amount: params[:amount], user_id: current_user.id)
-				current_user.payments << payment
-				date = date.next_month
-			end
-			redirect_to payment_success_path
-		rescue Exception => e
-			puts "ERRRRROOOORRRRR"
-			puts e.message
-			redirect_to  root_path
+		while(date <= params[:end_lease].to_date)
+			payment = Payment.create(due: date, amount: params[:amount], user_id: current_user.id)
+			current_user.payments << payment
+			date = date.next_month
 		end
+		redirect_to payment_success_path
 	end
 
 	private
