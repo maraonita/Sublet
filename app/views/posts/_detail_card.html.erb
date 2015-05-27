@@ -14,7 +14,7 @@
     </div>
     <div class='basic_info'>
         <div class="text-center">
-            <h1><%= post.housing_type_name %> in <%= post.neighborhood_name %></h1>
+            <h1><%= format_type_and_neighborhood(@post) %></h1>
         </div>
     </div>
 
@@ -47,7 +47,7 @@
                         <strong>To:</strong><br /> <%= post.end_lease %>
                     </div>
 										<div class="row payment-form">
-											<%= render "payment_form" %>	
+											<%= render "payment_form" if !@post.booked %>	
 										</div>
                 </div>
             </div>

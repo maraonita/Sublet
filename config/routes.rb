@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static#about'
   get '/faq', to: 'static#faq'
   get '/contact', to: 'static#contact'
+	get '/payment/success', to: 'static#payment_success', as: 'payment_success'
 
   root 'static#home'
 end

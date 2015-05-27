@@ -9,12 +9,12 @@
 	<script
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		data-key="pk_test_BxRKDgXVNnsSOuXqHORPlgiu"
-		data-image="/img/documentation/checkout/marketplace.png"
-		data-name="Sublit"
+		data-image="<%= image_url("room-pic.jpg")%>"
+		data-name="Book Sublet"
 		data-email= <%= current_user.email %>
-		data-description="2 widgets"
+		data-description="<%= format_type_and_neighborhood(@post) %>"
 		data-label= "Book Now " 
-		data-amount= <%= @post.price.to_i * 100%>
+		data-amount= <%= @post.price.to_i * 100 %>
 		data-name="Sublit">
 	</script>	
 <% end %>

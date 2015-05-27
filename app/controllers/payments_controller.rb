@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
 			current_user.payments << payment
 			date = date.next_month
 		end
-		redirect_to root_path
+		redirect_to payment_success_path
 	end
 
 	private
