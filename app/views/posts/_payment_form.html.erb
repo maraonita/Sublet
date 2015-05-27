@@ -1,6 +1,6 @@
 <%= form_tag payments_path	do %>
 	<article>
-		<span>Amount: $5.00</span>
+	<span>Amount: $<%= @post.price.to_i %>/ month</span>
 	</article>
 	<%= hidden_field_tag 'post_id', params[:id] %>
 	<%= hidden_field_tag 'amount', @post.price.to_i %>
@@ -10,8 +10,10 @@
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		data-key="pk_test_BxRKDgXVNnsSOuXqHORPlgiu"
 		data-image="/img/documentation/checkout/marketplace.png"
-		data-name="Demo Site"
+		data-name="Sublit"
+		data-email= <%= current_user.email %>
 		data-description="2 widgets"
+		data-label= "Book Now " 
 		data-amount= <%= @post.price.to_i * 100%>
 		data-name="Sublit">
 	</script>	
