@@ -5,13 +5,13 @@ class UserMailer < ActionMailer::Base
 		@user = subletter 
 		@sublet_owner = post.user
 		@sublet = post
-		mail(to: @user.email, subject: 'Sublet Information')
+		mail(to: @user.email, subject: 'Sublet Succesfully Booked! Basic Information')
 	end
 
 	def sublet_booked_admin_email(subletter, post)
 		@user = subletter 
 		@sublet = post
-		mail(to: @user.email, subject: 'Someone Booked a Sublet!')
+		mail(to: ENV["GMAIL_USERNAME"], subject: 'Someone Booked a Sublet!')
 	end
 
 	def sublet_booked_owner_email(subletter, post)
