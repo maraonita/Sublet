@@ -1,0 +1,32 @@
+<p>Hey <%= @sublet.user.first_name %>,</p> 
+<p><%= @user.first_name %> <%= @user.last_name %> booked your sublet! Feel free to reach out to <%= @user.first_name %> at <%= @user.email %>.</p>
+
+<h3> Your Sublet Information</h3>
+<p><b>Sublet Start Date: </b><%= @sublet.start_lease %></p>
+<p><b>Sublet End Date: </b><%= @sublet.end_lease %></p>
+<p><b>Price: </b>$<%= @sublet.price.to_f %> (billed monthly)</p>
+<p><b>Description: </b><%= @sublet.description %></p>
+<p><b>Number of Roommates: </b><%= @sublet.num_roommates %></p>
+<p><b>Number of Flatmates: </b><%= @sublet.num_flatmates %></p>
+<p><b>Number of Baths: </b><%= @sublet.num_baths %></p>
+<p><b>Heating: </b><%= @sublet.heating ? "Yes" : "No" %> </p>
+<p><b>Electricity: </b><%= @sublet.electricity ? "Yes" : "No" %></p>
+<p><b>Hot Water: </b><%= @sublet.hot_water ? "Yes" : "No" %></p>
+<p><b>Parking: </b><%= @sublet.parking ? "Yes" : "No" %></p>
+<p><b>Elevator: </b><%= @sublet.elevator ? "Yes" : "No" %></p>
+<p><b>Balcony: </b><%= @sublet.balcony ? "Yes" : "No" %></p>
+<p><b>Washer: </b><%= @sublet.washer ? "Yes" : "No" %></p>
+<p><b>Dryer: </b><%= @sublet.dryer ? "Yes" : "No" %></p>
+<p><b>Air Conditioning: </b><%= @sublet.air_conditioning ? "Yes" : "No" %></p>
+<p><b>Doorman: </b><%= @sublet.doorman ? "Yes" : "No" %></p>
+<p><b>Buzzer: </b><%= @sublet.buzzer ? "Yes" : "No" %></p>
+<p><b>Intercom: </b><%= @sublet.intercom ? "Yes" : "No" %></p>
+<p><b>Cable: </b><%= @sublet.cable ? "Yes" : "No" %></p>
+<p><b>Internet: </b><%= @sublet.internet ? "Yes" : "No" %></p>
+<p><b>Smoking: </b><%= @sublet.smoking ? "Yes" : "No" %></p>
+<p><b>Pool: </b><%= @sublet.pool ? "Yes" : "No" %></p>
+<p><b>Gym: </b><%= @sublet.gym ? "Yes" : "No" %></p>
+<p><b>Desk: </b><%= @sublet.desk ? "Yes" : "No" %></p>
+<p><b>Dresser: </b> <%= @sublet.dresser ? "Yes" : "No" %></p>
+<p><b>Closet:</b> <%= @sublet.closet ? "Yes" : "No" %></p>
+<p><b>Desk: </b><%= @sublet.desk ? "Yes" : "No" %></p>

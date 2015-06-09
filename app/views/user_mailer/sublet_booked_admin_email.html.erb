@@ -1,0 +1,12 @@
+<h3>WooHoo! <%= @user.first_name %> <%= @user.last_name %> just booked: </h3><br>
+
+<h3>Sublet Owner Information:</h3>
+<p><b>Post ID: </b><%= @sublet.id %></p>
+<p><b>Name: </b><%= @sublet.user.first_name %> <%= @sublet.user.last_name %></p>
+<p><b>Email: </b><%= @sublet.user.email %></p><br>
+
+<h3>Subletter Information</h3>
+<p><b>Name: </b><%= @user.first_name %> <%= @user.last_name %></p>
+<p><b>Email: </b><%= @user.email %></p>
+
+<p>Go to the <%= payments_path(host: "subit.herokuapp.com", only_path: false) %> to charge this user</p>

@@ -13,6 +13,11 @@ class PaymentsController < ApplicationController
 			current_user.payments << payment
 			date = date.next_month
 		end
+		@post = Post.find(params[:post_id])
+		@post.book!
+		UserMailer.sublet_booked_owner_email(current_user, @post).deliver
+		UserMailer.sublet_info_email(current_user, @post).deliver
+		UserMailer.sublet_booked_admin_email(current_user, @post).deliver
 		redirect_to payment_success_path
 	end
 
@@ -31,7 +36,5 @@ class PaymentsController < ApplicationController
 	end
 
 	def book_post
-		@post = Post.find(params[:post_id])
-		@post.book!
-	end
+			end
 end
