@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
 		end
 		@post = Post.find(params[:post_id])
 		@post.book!
-		UserMailer.sublet_booked_owner_email(current_user, @post).deliver
+		UserMailer.sublet_booked_owner_email(@post.user, @post).deliver
 		UserMailer.sublet_info_email(current_user, @post).deliver
 		UserMailer.sublet_booked_admin_email(current_user, @post).deliver
 		redirect_to payment_success_path
@@ -36,5 +36,5 @@ class PaymentsController < ApplicationController
 	end
 
 	def book_post
-			end
+	end
 end
