@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @posts = @posts.paginate(:page => params[:page], :per_page => 10)
     render 'index'
   end
-
+  
   def new
     authenticate_user!
     @post = current_user.posts.build

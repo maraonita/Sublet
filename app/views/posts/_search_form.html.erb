@@ -1,12 +1,15 @@
 <div class="search_form">
 	<%= form_tag post_search_path, :method => :get do %>
-		<div class="input-group neighbor-search-group">
-			<span class="input-group-addon" id="basic-addon1"><%= label :neighborhood_id, 'Neighborhood' %></span>
-	  		<%= collection_select :neighborhood_id, :id,  Neighborhood.all, :id, :name, {}, {:class=>'form-control big-search-bar'} %>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="input-group neighbor-search-group">
+			  		<%= collection_select :neighborhood_id, :id,  Neighborhood.all, :id, :name, { :prompt => "Select a Neighborhood" }, {:class=>'form-control big-search-bar'}%>
+			  	</div>
+	  		</div>
 	  	</div>
 	  	<div class="row">
 	  		<div class="col-md-6 col-md-offset-3 text-center faux-form-control">
-				<strong>Available from</strong><br />
+				<strong>Available from</strong><br/>
 				<div class="faux-date-grouping move-left">
 					<%= select_date Date.today, start_year: Date.today.year, :prefix => :start_lease%> 
 				</div>

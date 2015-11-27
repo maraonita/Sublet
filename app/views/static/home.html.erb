@@ -1,5 +1,5 @@
-<div class="homepage">
-	<div class="jumbotron" id="homeJumbo">
+<div id="headerwrap">
+	<div class="container">
 		<h1>SubIt</h1>
 
 		<%= render 'posts/search_form' %>
@@ -11,3 +11,39 @@
 		</div>
 	</div>
 </div>
+
+<div id="serviceswrap">
+	<div class="container">
+		<h1 class="centered mtb"> What we offer </br>
+		This is just an idea of what it could be</h1>
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="home-icons"><i class="fa fa-calendar"></i></div>
+				<h3 class="centered">Service/Feature</h3>
+				<p>Here is a description of a feature that we want to make sure everyone knows about. We are going to describe it so that people can get an idea of what is going on here.</p>
+			</div>
+			<div class="col-lg-4">
+				<div class="home-icons"><i class="fa fa-bar-chart"></i></div>
+
+				<h3 class="centered">Service/Feature</h3>
+				<p>Here is a description of a feature that we want to make sure everyone knows about. We are going to describe it so that people can get an idea of what is going on here.</p>
+			</div>
+			<div class="col-lg-4">
+				<div class="home-icons"><i class="fa fa-cloud"></i></div>
+				<h3 class="centered">Service/Feature</h3>
+				<p>Here is a description of a feature that we want to make sure everyone knows about. We are going to describe it so that people can get an idea of what is going on here.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="calltoaction">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-6 col-lg-offset-3">
+			<h1>ARE YOU INTERESTED IN SUBIT?</h1>
+			<%= link_to "Sign up now!", "#", class:"btn btn-primary" %>
+			</div>
+		</div><!-- row -->
+	</div><!-- container -->
+</div><!--  bluewrap -->

@@ -1,24 +1,159 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
 
 /* ------------------------------------*/
-    /* HOMEPAGE & NAVBAR CSS BELOW */
+    /* FONTS */
 /* ------------------------------------*/
 
-#homeJumbo h1 { 
-	text-align: center;
-	margin: 50px;
+body {
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 70px;
+}
+
+
+/* ------------------------------------*/
+    /* TITLES */
+/* ------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+    font-weight: 300;
+    color: #333;
+}
+
+
+/* ------------------------------------*/
+    /* PARAPGRAPH AND TYPOGRAPHIC*/
+/* ------------------------------------*/
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+.centered {
+    text-align: center;
+}
+
+
+/* ------------------------------------*/
+    /* LINKS */
+/* ------------------------------------*/
+
+a {
+    color: #3498db;
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover, a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before, a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+ 
+/* ------------------------------------*/
+    /* NAVBAR */
+/* ------------------------------------*/
+
+
+.navbar {
+  
+  font-weight: 800;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-inverse {
+  background: #2d2d2d;
+  border-color: #2d2d2d;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background: #ff7878
+}
+
+.navbar-inverse .navbar-brand a{
+  font-weight: bolder;
+  font-size: 22px;
+  letter-spacing: 1px;
+  color:#f85c37;
+}
+
+
+
+
+/* ------------------------------------*/
+    /* HOMEPAGE */
+/* ------------------------------------*/
+
+#headerwrap h1 { 
+	margin-top: 125px;
   color: #fff;
-  text-shadow: 2px 2px #d3d3d3;
-  letter-spacing: 1.5px;
+  font-size: 70px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align:center;
 }
-body{
-	background-color: #7FD6D3;
+
+#headerwrap {
+	background: url('boston.jpg') no-repeat center top;
+  padding-top:20px;
+  text-align:center;
+  min-height: 650px;
+  width: 100%;
+  
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
 }
-.jumbotron {
-	background: linear-gradient(
-		rgba(255, 255, 255, 0.3),
-		rgba(255, 255, 255, 0.3)
-	), url('boston-skyline.jpg') no-repeat center center fixed;
-	background-size: 100% auto;
+
+#serviceswrap{ 
+  padding-bottom:35px;
+}
+.home-icons{
+  text-align:center;
+  color:#f85c37;
+  font-size:50px;
+}
+
+#calltoaction {
+ background: #3498db;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  h1 {
+    color: white;
+    font-weight: 700;
+  } 
 }
 label {
 	margin-right: 6px;
@@ -49,23 +184,6 @@ img.user-img {
   display: block;
 }
 
-.navbar {
-  .container-fluid {
-    background-color: #6CCFCA;
-    border: none;
-    
-    .navbar-brand {
-      color: #fff;
-      font-size: 175%;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
-    .nav > li > a {
-      color: #fff;
-      font-size: 110%;
-    }
-  }
-}
 
 .search_form {
   padding-top: 40px;
@@ -84,6 +202,7 @@ img.user-img {
     display: inline;
     padding-left: 30px;
   }
+  color:white;
 }
 
 .big-search-button-row {
@@ -162,6 +281,65 @@ option, select {
 .payment-form button {
 	margin-top: 10px;
 }
+
+/* ------------------------------------*/
+        /* ABOUT US */
+/* ------------------------------------*/
+
+#blue {
+  background: #3498db;
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  h1 {
+    color: white;
+    font-weight: 700;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+#aboutus {
+  padding-top:35px;
+  padding-bottom:35px;
+}
+
+#founders {
+  padding-top:35px;
+  text-align:center;
+}
+
+/* ------------------------------------*/
+        /* HELP*/
+/* ------------------------------------*/
+
+
+
+#faq { 
+  padding-top:35px;
+  padding-bottom:113px;
+}
+
+/* ------------------------------------*/
+        /* LOGIN */
+/* ------------------------------------*/
+
+#login {
+  padding-top:35px;
+  padding-bottom:212px;
+
+  .login-btn {
+    margin-bottom: 15px;
+  }
+
+  p{
+    margin-bottom: 10px;
+  }
+}
+
+
 /* ------------------------------------*/
         /* LISTING CSS BELOW */
 /* ------------------------------------*/
@@ -440,6 +618,16 @@ $prof-pic-size: 200px;
       /* HELPER GENERIC CSS BELOW */
 /* ------------------------------------*/
 
+.ptb {
+  padding-top:35px;
+  padding-bottom:35px;
+}
+
+.mtb{
+  margin-top:35px;
+  margin-bottom:35px;
+}
+
 .panel {
   overflow: hidden;
 }
@@ -464,8 +652,14 @@ $prof-pic-size: 200px;
 }
 
 .btn-primary {
-  background-color: #6CCFCA !important;
-  border-color: #5dcbc5 !important;
+    color:#fff;
+    background-color: #f85c37;
+    border-color:#f85c37;
+    border-radius: 50px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 24px 13px 24px
 }
 
 .inline-form-button {
@@ -483,4 +677,47 @@ $prof-pic-size: 200px;
   font-size: 10px;
 }
 
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
 /* ------------------------------------*/
+
+/* FOOTER */
+#footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #2f2f2f;
+  h1 { color: white;
+    text-transform: uppercase;
+  }
+
+  p{ color:white;
+
+  }
+
+  h5 {
+    margin-top: 30px;
+    letter-spacing: 1px;
+  }
+
+  a {
+    color: #b9b9b9;
+  }
+
+  a:hover {
+    color: #03C9A9;
+  }
+
+  i {
+  font-size: 30px;
+  padding: 20px;
+  }
+}
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404235529) do
+ActiveRecord::Schema.define(version: 20150527020008) do
 
   create_table "bed_sizes", force: true do |t|
     t.string   "name"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 20150404235529) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.date     "due"
+    t.integer  "amount"
+    t.string   "currency",   default: "usd"
+    t.boolean  "paid",       default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "post_id"
   end
 
   create_table "posts", force: true do |t|
@@ -71,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150404235529) do
     t.integer  "bed_size_id"
     t.boolean  "furnished",        default: false
     t.boolean  "unfurnished",      default: false
+    t.boolean  "booked",           default: false
   end
 
   create_table "requests", force: true do |t|
@@ -117,6 +136,7 @@ ActiveRecord::Schema.define(version: 20150404235529) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "customer_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

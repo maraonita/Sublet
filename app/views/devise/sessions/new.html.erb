@@ -1,16 +1,30 @@
-<h2>Log in</h2>
+<div id="blue">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-6 col-lg-offset-3">
+			<h1>LOGIN</h1>
+			</div>
+		</div><!-- row -->
+	</div><!-- container -->
+</div><!--  bluewrap -->
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-	    <%= f.input :email, required: false, autofocus: true %>
-	    <%= f.input :password, required: false %>
-	    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
- 
+<div id="login">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
 
-  <div class="form-actions inline-form-button">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				  <div class="form-group">
+					    <%= f.input :email, required: false, autofocus: true %>
+					    <%= f.input :password, required: false %>
+					    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+				  </div>
+				    <%= f.button :submit, "Log in", class: " btn btn-primary login-btn" %>
+				<% end %>
+				<%= render "devise/shared/links" %>
 
-<%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>
+</div>
+
