@@ -1,45 +1,51 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="titles">
+  <div class="container">
+    <div class="row centered">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Settings</h1>
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+</div><!--  titleswrap -->
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+<div class="container" id="settings-form">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-2">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+        <div class="form-inputs">
+          <h3>Account</h3>
+          <%= f.input :email, required: true, autofocus: true %>
 
-    <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it.", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "We need your current password to confirm your changes.", required: true %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-    <div class="row">
-      <div class="col-md-10">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">User Information</h3>
-          </div>
-          <div class="panel-body">
-            <%= f.label 'First name', required: false%>
-            <%= f.text_field :first_name, required: false %>
-            <%= f.label 'Last name', required: false%>
-            <%= f.text_field :last_name, required: false %>
-						<span id="university-field">
-            <%= f.label 'University', required: false%>
-        	  <%= f.collection_select :university_id, University.order(:name), :id, :name, default: false, default: current_user.university_name  %>
-					</span>
+          <%= f.input :password, autocomplete: "off", hint: "Leave it blank if you don't want to change it.", required: false %>
+          <%= f.input :password_confirmation, required: false %>
+          <%= f.input :current_password, hint: "We need your current password to confirm your changes.", required: true %>
+
+          <p id="optout">
+            <strong>Unhappy?</strong> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+          </p>
+          <h3>User Profile</h3>
+
+          <%= f.input :first_name, label: "First name",required: false %>
+          <%= f.input :last_name, label: "Last name", required: false %>
+          
+          <%= f.label 'University', required: false%></br>
+          <%= f.collection_select :university_id, University.order(:name), :id, :name, default: false, default: current_user.university_name  %>
+      
+            
         </div>
-      </div>
-      <div class="col-md-4">
-        <p>
-          <strong>Unhappy?</strong> <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-        </p>
-      </div>
-  </div>
 
-  <div class="text-center detail-action-buttons">
-      <%= link_to "Back", :back, :class =>"btn btn-default btn-primary" %>
-      <%= f.button :submit, "Update", :class =>"btn btn-default btn-success" %>
+        <div class="detail-action-buttons">
+            <%= f.button :submit, "Update", :class =>"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
+

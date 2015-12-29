@@ -155,10 +155,7 @@ a:before, a:after {
     font-weight: 700;
   } 
 }
-label {
-	margin-right: 6px;
-	margin-left: 6px;
-}
+
 .post_card:hover {
   cursor: pointer;
 }
@@ -286,23 +283,16 @@ option, select {
         /* ABOUT US */
 /* ------------------------------------*/
 
-#blue {
-  background: #3498db;
-  padding-top: 35px;
-  padding-bottom: 35px;
-
+#titles {
+  padding-top: 25px;
+  
   h1 {
-    color: white;
+    color: #f85c37;
     font-weight: 700;
-  }
-
-  p {
-    color: white;
   }
 }
 
 #aboutus {
-  padding-top:35px;
   padding-bottom:35px;
 }
 
@@ -314,7 +304,6 @@ option, select {
 /* ------------------------------------*/
         /* HELP*/
 /* ------------------------------------*/
-
 
 
 #faq { 
@@ -338,6 +327,23 @@ option, select {
     margin-bottom: 10px;
   }
 }
+
+/* ------------------------------------*/
+        /* SETTINGS */
+/* ------------------------------------*/
+
+#optout{
+  margin-top:25px;
+}
+
+#settings-form{
+  padding-bottom: 25px;
+}
+
+.detail-action-buttons {
+  margin: 25px auto;
+}
+
 
 
 /* ------------------------------------*/
@@ -448,9 +454,6 @@ option, select {
   } 
 }
 
-#university-field {
-	white-space: nowrap;
-}
 
 /* ------------------------------------*/
 
@@ -501,9 +504,6 @@ option, select {
   margin-bottom: 10px;
 }
 
-.detail-action-buttons {
-  margin: 18px auto;
-}
 
 $prof-pic-size: 200px;
 
@@ -548,33 +548,29 @@ $prof-pic-size: 200px;
   margin: 10px 5%;
 }
 
-.profile-header {
-  border-radius: 4px;
-  width:60%;
-  margin-left: 20% !important;
-  margin-right: 20% !important;
-  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  padding-left: 0;
-  padding-right: 0;
-  margin-bottom: 18px;
-  overflow: none;
-  background-color: rgba(127, 214, 211, 0.2);
-}
 
-.profile-header .col-xs-3 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
 
-.profile-header div:nth-child(2) h1 {
+/*
+
+#profile-header div:nth-child(2) h1 {
   font-size: 42px !important;
   padding-right: 10px;
   padding-top: 20px;
 }
 
+
+*/
+
 .profile-user-img {
   overflow: hidden;
   height: 150px;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom: 18px;
+  overflow: none;
+  background-color: rgba(127, 214, 211, 0.2);
+  padding: 0px;
+  margin-top:25px;
 }
 
 .profile-user-img img {
@@ -611,6 +607,10 @@ $prof-pic-size: 200px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+#pic{
+  margin-top:15px;
+} 
 
 /* ------------------------------------*/
 

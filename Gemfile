@@ -14,6 +14,10 @@ gem "figaro"
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
 gem 'fog', '>= 1.15.0'
+
+gem 'awesome_print', require: 'ap'
+gem 'pry-rails', group: :development
+
 group :production do
   gem 'rack-cache', :require => 'rack/cache'
 end
