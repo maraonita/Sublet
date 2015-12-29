@@ -1,19 +1,29 @@
-<% if ! (@start_lease && @end_lease && @neighborhood_name) %>
-	<h1>All posts</h1>
-<% else %>
-	<h1>Results in <%= @neighborhood_name %> from <%= @start_lease.to_s(:default) %> to <%= @end_lease.to_s(:default) %></h1>
-<% end %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<% if ! (@start_lease && @end_lease && @neighborhood_name) %>
+				<h1 class="centered">Available Listings</h1>
+			<% else %>
+				<h1 class="centered">Results in <%= @neighborhood_name %> from </br> <%= @start_lease.to_s(:default) %> to <%= @end_lease.to_s(:default) %></h1>
+			<% end %>
+		</div>
+	</div>
+</div>
 
 <%= render 'search_form' %>
 
-<% if @no_search_results %>
-	<h2>No results!</h2>
-	<hr/>
-	<h2>Displaying all posts</h2>
-<% end %>
-
-<% @posts.each do |p| %>
-	<%= render 'card', post: p %>
-<% end %>
-
-<%= will_paginate @posts  %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-lg-offset-3">
+			<% if @no_search_results %>
+				<h3 class="centered">There are no available listings at this time!</h3>
+			<% else %>
+				<% @posts.each do |p| %>
+					<%= render 'card', post: p %>
+				<% end %>
+			<%end%> 
+			<%= will_paginate @posts  %>
+		</div>
+	</div>
+</div>
